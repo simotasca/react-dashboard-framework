@@ -30,7 +30,7 @@ export function Layout() {
       <NotificationPanel>
         <s.SidebarLayout sidebar={<Sidebar {...{ page, setPage }} />}>
           {/* <Header {...{ page, setPage }} /> */}
-          <div className="p-6">{pages[page]}</div>
+          <div className="h-full w-full relative overflow-auto p-6">{pages[page]}</div>
         </s.SidebarLayout>
       </NotificationPanel>
     </>
