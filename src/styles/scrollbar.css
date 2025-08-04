@@ -1,0 +1,25 @@
+/* Apply custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 9px; /* Scrollbar width */
+  height: 9px; /* Scrollbar width */
+}
+
+/* Scrollbar track */
+::-webkit-scrollbar-track {
+  background: #33333322; /* Track color */
+}
+
+/* Scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background: #33333380; /* Thumb color */
+  border-radius: 10px; /* Thumb border-radius */
+}
+
+/* Scrollbar thumb states */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Hover thumb color */
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #444; /* Active thumb color */
+}

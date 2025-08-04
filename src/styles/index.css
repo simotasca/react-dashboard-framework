@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply dark:bg-zinc-900 dark:text-white;
+  }
+
+  ::-webkit-scrollbar {
+    display: none; /* Chrome */
+  }
+  
+  * {
+    -ms-overflow-style: none; /* IE 11 */
+    scrollbar-width: none; /* Firefox 64 */
+  }
+}

@@ -1,0 +1,125 @@
+.container {
+  @apply w-full border rounded-lg border-zinc-950/20 dark:border-white/20;
+    /* max-h-[75svh] */
+}
+
+.table {
+  @apply w-full
+    text-left text-sm/tight 
+    text-zinc-950 dark:text-white
+    border-separate border-spacing-0 whitespace-nowrap;
+}
+
+.head {
+  @apply sticky top-0 z-20 
+    text-zinc-500 dark:text-zinc-400
+    bg-white dark:bg-zinc-900
+    rounded-t-md;
+}
+
+.foot {
+  @apply sticky bottom-0 z-20;
+}
+
+.row {
+  @apply align-middle;
+}
+
+.cell,
+.header {
+  @apply py-2 px-4 border-b
+   bg-white dark:bg-zinc-900 border-zinc-950/10 dark:border-white/10;
+}
+
+.header {
+  @apply font-bold uppercase text-xs
+    border-t
+    border-y-zinc-950/20 dark:border-y-white/20 pt-2.5;
+}
+
+tbody:has(+.foot) .row:last-child .cell {
+ @apply border-b-0;
+}
+
+.header:first-child {
+  @apply rounded-tl-md;
+}
+
+.header:last-child {
+  @apply rounded-tr-md;
+}
+
+.foot {
+  @apply bg-white dark:bg-zinc-900
+  rounded-b-md;
+}
+
+.foot .cell:first-child {
+  @apply rounded-bl-md;
+}
+
+.foot .cell:last-child {
+  @apply rounded-br-md;
+}
+
+.row .cell:last-child, .row .header:last-child {
+  @apply border-r border-r-zinc-950/20 dark:border-r-white/20;
+}
+
+.row .cell:first-child, .row .header:first-child {
+  @apply border-l border-l-zinc-950/20 dark:border-l-white/20;
+}
+
+.foot .cell {
+  @apply border-t border-y-zinc-950/20 dark:border-y-white/20 pt-2.5;
+}
+
+tbody .row:nth-child(odd) .cell {
+  @apply bg-zinc-100 dark:bg-zinc-850;
+}
+
+.pagination {
+  @apply flex items-center gap-1;
+}
+
+.pagination [data-slot=icon] {
+  @apply fill-zinc-900 dark:fill-white;
+}
+
+/* @media not all and screen(table) { */
+@media not all and (min-width: theme(screens.table)) {
+  .container {
+    @apply border-none rounded-none;
+  }
+  
+  .head {
+    clip: rect(0 0 0 0);
+    @apply absolute size-px -m-px p-0 overflow-hidden;
+  }
+
+  .row {
+    @apply block mb-2.5;
+  }
+
+  .cell {
+    @apply block text-right w-full border-x
+     bg-zinc-100 dark:bg-zinc-850;
+  }
+
+  .row .cell:last-child, .row .header:last-child {
+    @apply border-r border-r-zinc-950/10 dark:border-r-white/10;
+  }
+  
+  .row .cell:first-child, .row .header:first-child {
+    @apply border-l border-l-zinc-950/10 dark:border-l-white/10;
+  }
+
+  .cell:first-of-type {
+    @apply border-t;
+  }
+
+  .cell::before {
+    content: attr(data-label);
+    @apply float-left text-xs/5 font-medium uppercase pr-4;
+  }
+}

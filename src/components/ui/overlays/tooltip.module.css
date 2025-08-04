@@ -1,0 +1,18 @@
+.tooltip {
+  @apply rounded-md py-0.5 px-2.5
+    whitespace-nowrap
+    dark:bg-zinc-900/85
+    border dark:border-zinc-700;
+}
+
+.container {
+  @apply relative;
+}
+
+.floating {
+  @apply absolute hidden z-50;
+}
+
+.container:hover .floating {
+  @apply block;
+}

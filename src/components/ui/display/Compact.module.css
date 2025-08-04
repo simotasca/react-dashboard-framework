@@ -1,0 +1,28 @@
+.compact {
+  display: flex;
+}
+
+.compact > [data-slot="control"]:has(+ *) input,
+.compact > [data-slot="control"]:has(+ *) select,
+.compact > input:has(+ *),
+.compact > select:has(+ *),
+.compact > button:has(+ *),
+.compact > button:has(+ *)::after,
+.compact > button:has(+ *)::before {
+  @apply rounded-r-none;
+}
+
+.compact > * + [data-slot="control"] input,
+.compact > * + [data-slot="control"] select,
+.compact > * + input,
+.compact > * + select,
+.compact > * + button,
+.compact > * + button::after,
+.compact > * + button::before {
+  @apply rounded-l-none border-l-0;
+}
+
+.compact > button:has(+ *)::after,
+.compact > * + button::after {
+  @apply right-0;
+}
